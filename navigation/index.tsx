@@ -12,11 +12,11 @@ import { ColorSchemeName, Pressable } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import ModalScreen from '../screens/ModalScreen';
-import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import TabThreeScreen from '../screens/TabThreeScreen';
+import ModalScreen from '../src/screens/ModalScreen';
+import NotFoundScreen from '../src/screens/NotFoundScreen';
+import TabOneScreen from '../src/screens/TabOneScreen';
+import TabTwoScreen from '../src/screens/TabTwoScreen';
+import TabThreeScreen from '../src/screens/TabThreeScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -69,7 +69,7 @@ function BottomTabNavigator() {
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
           title: 'Client List',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerTitleAlign: 'center'
+          headerShown: false
         })}
       />
       <BottomTab.Screen
@@ -85,7 +85,7 @@ function BottomTabNavigator() {
         name="TabThree"
         component={TabThreeScreen}
         options={{
-          title: 'Add Client',
+          title: 'Profile',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerTitleAlign: 'center'
         }}
